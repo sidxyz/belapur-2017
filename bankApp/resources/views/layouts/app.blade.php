@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('bootstrap')
 </head>
 <body>
     <div id="app">
@@ -46,12 +47,19 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/showbanks">Show Registered Banks</a>
+                                    </li> 
+                                     <li>
+                                        <a href="/bankadd">Add New Bank</a>
+                                    </li> 
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -63,6 +71,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+     
                                 </ul>
                             </li>
                         @endguest

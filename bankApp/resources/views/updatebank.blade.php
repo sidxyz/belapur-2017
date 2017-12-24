@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>add bank screen</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-</head>
-<body>
+@extends('layouts.app')
+
+  @section('content')
   <div class="container-fluid">
     <h4 class="card-title">Add Bank</h4>
   	<form action="/editDetails" method="POST">
@@ -32,8 +28,5 @@
     <div class="form-group">
       <button type="submit" class="btn btn-outline-primary" >Update</button>
     </div>
-    
   </form>
-</div>
-</body>
-</html>
+  @endsection

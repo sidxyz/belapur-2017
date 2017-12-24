@@ -8,15 +8,16 @@ use Illuminate\Support\Facades\Mail;
 
 class BankController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function addBank(Request $request)
     {
     	$bankObject = Bank::create($request->all());
-
-        $mailBody = new \App\Mail\WelcomMail;
-
-
-        Mail::to('siddarth.rait@gmail.com')->send($mailBody);
-    	return redirect('/showbanks'); 
+    	return redirect('/showbanks')->with('status','true'); 
     }
 
     public function showForm()
@@ -28,7 +29,7 @@ class BankController extends Controller
     {
         $bank = new Bank;
         $banks = $bank->all();
-        return view('showBanks')->with('data',$banks);
+        return view('showBanks')->with('data',$banks)->with('status','false');
     }
 
     public function deleteBank($id)
