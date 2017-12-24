@@ -15,22 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
-    return view('timepass');
-});
+Route::get('/bankadd','BankController@showForm');
 
-Route::get('/student', function () {
-    return view('studentdashboard');
-});
+Route::get('/showbanks','BankController@showBank');
 
-Route::get('/teacher', function () {
-    return view('teacherdashboard');
-});
+Route::get('/deleteBank/{id}','BankController@deleteBank');
 
-Route::get('/admin', function () {
-    return view('admindashboard');
-});
+Route::get('/editBank/{id}','BankController@editBank');
 
+Route::post('/storebank','BankController@addBank');
+
+Route::post('/editDetails','BankController@update');
 
 Auth::routes();
 
