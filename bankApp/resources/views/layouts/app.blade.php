@@ -55,11 +55,21 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="/showbanks">Show Registered Banks</a>
+                                        <a href="/showbanks" style="display:none;">Show Registered Banks</a>
                                     </li> 
                                      <li>
-                                        <a href="/bankadd">Add New Bank</a>
+                                        <a href="/bankadd" style="display:none;">Add New Bank</a>
                                     </li> 
+                                    <li>
+                                        <a href="/updateadditionalform">Add Supporting Documents</a>
+                                    </li> 
+                                    <!-- Only administrative user should be able to see this menu item -->
+                                    @if(Auth::user()->type=='admin')
+                                    <li>
+                                        <a href="/approvals">Review Documents</a>
+                                    </li> 
+                                    @endif
+
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

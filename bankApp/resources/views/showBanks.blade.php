@@ -2,15 +2,7 @@
 
 	@section('content')
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
 	 <div class="container-fluid">
-	 	@if($status=='true')
-	 	<p class="bg-success">
-	 		Bank added successfully
-	 	</p>
-	 	@endif
 
 	 	<h4 class="card-title">Registered Banks</h4>
 	 	<table class="table">

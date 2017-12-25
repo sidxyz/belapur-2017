@@ -27,6 +27,20 @@ Route::post('/storebank','BankController@addBank');
 
 Route::post('/editDetails','BankController@update');
 
+Route::get('/accountcreation','UserController@show');
+
+Route::post('/createaccount','UserController@store');
+
+Route::get('/updateadditionalform','DocumentsController@show');
+
+Route::post('/uploaddocs','DocumentsController@store');
+
+Route::get('/approvals','AdminController@showPendingApprovals');
+
+Route::get('/showprofile/{id}','DocumentsController@showDocsById');
+
+Route::get('/approveprofile/{id}','DocumentsController@approveProfileById');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
